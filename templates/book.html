@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+isbn: {{book.isbn}}<br/><br/>
+title: {{book.title}}<br/><br/>
+authors: {{book.authors}}<br/><br/>
+date_added: {{book.date_added}}<br/><br/>
+url: {{book.url}}<br/><br/>
+subjects: {{book.subjects}}<br/><br/>
+subject_places: {{book.subject_places}}<br/><br/>
+subject_people: {{book.subject_people}}<br/><br/>
+subject_times: {{book.subject_times}}<br/><br/>
+publishers: {{book.publishers}}<br/><br/>
+publish_places: {{book.publish_places}}<br/><br/>
+publish_date: {{book.publish_date}}<br/><br/>
+cover_url: {{book.cover_url}}<br/><br/>
+number_of_pages: {{book.number_of_pages}}<br/><br/>
+weight: {{book.weight}}<br/><br/>
+<img src="{{ book.cover_url }}"/>
+{% endblock content %}

@@ -62,16 +62,16 @@ def get_book_from_api(isbn):
 
         if 'cover' in in_d:
             if 'medium' in in_d.get('cover'):
-                cover_r = get(url=in_d.get('cover').get('medium'))
+                cover_url = in_d.get('cover').get('medium')
             elif 'large' in in_d.get('cover'):
-                cover_r = get(url=in_d.get('cover').get('large'))
+                cover_url = in_d.get('cover').get('large')
             else:
-                cover_r = get(url=in_d.get('cover').get('small'))
-            cover_filename = f'{isbn}_cover.jpg'
-            with open(f'cover_images/{cover_filename}', 'wb') as f:
-                f.write(cover_r.content)
+                cover_url = in_d.get('cover').get('small')
+            # cover_filename = f'{isbn}_cover.jpg'
+            # with open(f'cover_images/{cover_filename}', 'wb') as f:
+            #     f.write(cover_r.content)
         else:
-            cover_filename = None
+            cover_url = None
         number_of_pages = in_d.get('number_of_pages')
         weight = in_d.get('weight')
         book = Book(
@@ -87,7 +87,7 @@ def get_book_from_api(isbn):
             publishers=publishers,
             publish_places=publish_places,
             publish_date=publish_date,
-            cover_filename=cover_filename,
+            cover_url=cover_url,
             number_of_pages=number_of_pages,
             weight=weight,
         )

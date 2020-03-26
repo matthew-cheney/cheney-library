@@ -1,6 +1,6 @@
 class Book:
 
-    def __init__(self, isbn, title='', authors=[], date_added='', url='', subjects=[], subject_places=[], subject_people=[], subject_times=[], publishers=[], publish_places=[], publish_date='', cover_filename='', number_of_pages='', weight=''):
+    def __init__(self, isbn, title='', authors=[], date_added='', url='', subjects=[], subject_places=[], subject_people=[], subject_times=[], publishers=[], publish_places=[], publish_date='', cover_url='', number_of_pages='', weight=''):
         self.isbn = isbn
         self.title = title
         self.authors = authors
@@ -13,7 +13,7 @@ class Book:
         self.publishers = publishers
         self.publish_places = publish_places
         self.publish_date = publish_date
-        self.cover_filename = cover_filename
+        self.cover_url = cover_url
         self.number_of_pages = number_of_pages
         self.weight = weight
 
@@ -30,7 +30,7 @@ class Book:
         s += (f'publishers: {self.publishers}\n' if not self.publishers == [] else '')
         s += (f'publish_places: {self.publish_places}\n' if not self.publish_places == [] else '')
         s += (f'publish_date: {self.publish_date}\n' if not self.publish_date == '' else '')
-        s += (f'cover_filename: {self.cover_filename}\n' if not self.cover_filename == '' else '')
+        s += (f'cover_url: {self.cover_url}\n' if not self.cover_url == '' else '')
         s += (f'number_of_pages: {self.number_of_pages}\n' if not self.number_of_pages == '' else '')
         s += (f'weight: {self.weight}\n' if not self.weight == '' else '')
         return s

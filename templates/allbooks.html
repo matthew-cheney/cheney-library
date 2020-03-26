@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<table>
+    {% for book in books %}
+    <tr>
+        <td>
+            <img src="{{ book.cover_url }}"/>
+        </td>
+        <td style="padding-left: 10px;">
+            isbn: {{book.isbn}}<br/><br/>
+            title: {{book.title}}<br/><br/>
+            authors: {{book.authors}}<br/><br/>
+            publishers: {{book.publishers}}<br/><br/>
+            publish_date: {{book.publish_date}}<br/><br/>
+            <a href="delete-book/{{ book.isbn }}">delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}
